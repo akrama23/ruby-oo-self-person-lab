@@ -1,9 +1,9 @@
 # your code goes here
 class Person
 
-    attr_accessor :bank_account, :friend
+    attr_accessor :bank_account, :friend, :hygiene, :happiness
 
-    attr_reader :name, :happiness, :hygiene
+    attr_reader :name
 
     def initialize(name)
             @name = name
@@ -12,21 +12,24 @@ class Person
             @hygiene = 8
     end
 
-    def happiness=(points)
-      @happiness = points
+    def happiness
+     
       if @happiness > 10
         @happiness = 10
       elsif @happiness < 0
         @happiness = 0
+        else
+        @hygiene = @hygiene
       end
     end
 
-    def hygiene=(points)
-      @hygiene = points
+    def hygiene
       if @hygiene > 10
         @hygiene = 10
-      elsif @hygiene < 0
+      elsif @hygiene  < 0
         @hygiene = 0
+      else 
+        @hygiene = @hygiene
       end
     end
 
@@ -44,7 +47,7 @@ class Person
     end
 
     def take_bath
-        @hygiene += 4
+        self.hygiene += 4
         "♪ Rub-a-dub just relaxing in the tub ♫"
     end
 
