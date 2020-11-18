@@ -13,7 +13,7 @@ class Person
     end
 
     def happiness=(points)
-      @happiness += points
+      @happiness = points
       if @happiness > 10
         @happiness = 10
       elsif @happiness < 0
@@ -22,7 +22,7 @@ class Person
     end
 
     def hygiene=(points)
-      @hygiene += points
+      @hygiene = points
       if @hygiene > 10
         @hygiene = 10
       elsif @hygiene < 0
@@ -45,7 +45,6 @@ class Person
 
     def take_bath
         @hygiene += 4
-
         "♪ Rub-a-dub just relaxing in the tub ♫"
     end
 
@@ -55,8 +54,7 @@ class Person
       "♪ another one bites the dust ♫"
     end
 
-    def call_friend(friend)
-#      self.friend = friend
+    def call_friend
 
 
     end
