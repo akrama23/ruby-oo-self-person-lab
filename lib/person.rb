@@ -13,13 +13,12 @@ class Person
     end
 
     def happiness
-     
       if @happiness > 10
         @happiness = 10
       elsif @happiness < 0
         @happiness = 0
-        else
-        @hygiene = @hygiene
+      else
+        @happiness = @happiness
       end
     end
 
@@ -28,7 +27,7 @@ class Person
         @hygiene = 10
       elsif @hygiene  < 0
         @hygiene = 0
-      else 
+      else
         @hygiene = @hygiene
       end
     end
@@ -52,33 +51,28 @@ class Person
     end
 
     def work_out
-      @happiness += 2
-      @hygiene -= 3
+      self.happiness += 2
+      self.hygiene -= 3
       "♪ another one bites the dust ♫"
     end
 
-    def call_friend
-
-
+    def call_friend(friend)
+      self.happiness += 3
+      friend.happiness += 3
+      "Hi #{friend.name}! It's #{self.name}. How are you?"
     end
 
     def start_conversation(conversation_starter, topic)
-
-#      self.conversation_starter = friends
-
       if topic == "politics"
-#        self.@happiness -= 1
-
+        self.happiness -= 2
+        conversation_starter.happiness -= 2
         "blah blah partisan blah lobbyist"
       elsif topic == "weather"
+        self.happiness += 1
+        conversation_starter.happiness += 1
         "blah blah sun blah rain"
-#        self.@happiness += 1
       else
         "blah blah blah blah blah"
       end
-
-
     end
-
-
 end
